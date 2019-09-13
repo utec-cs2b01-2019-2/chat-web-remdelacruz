@@ -28,6 +28,15 @@ def static_content(content):
 def cuantasletras(nombre):
     return str(len(nombre))
 
+@app.route('/authenticate', method = ['POST'])
+def authenticate():
+    username = request.for
+    if username == 'jbellido' and password == 'qwerty':
+        session['usuario'] = username:
+        return "Welcome " + username:
+    else:
+        return "Sorry, "+username+" you are not a valid user"
+
 @app.route('/suma/<numero>')
 def suma(numero):
     if 'suma' not in session:
