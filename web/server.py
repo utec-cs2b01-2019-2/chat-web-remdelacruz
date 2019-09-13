@@ -28,8 +28,6 @@ def static_content(content):
 def cuantasletras(nombre):
     return str(len(nombre))
 
-
-
 @app.route('/suma/<numero>')
 def suma(numero):
     if 'suma' not in session:
