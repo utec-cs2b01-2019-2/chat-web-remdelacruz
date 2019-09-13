@@ -24,6 +24,17 @@ def index():
 def static_content(content):
     return render_template(content)
 
+@app.route ('cuantasletras/<nombre>')
+def cuantasletras(nombre):
+    return str(len(nombre))
+
+@app.route('/suma/<numero>')
+def suma(numero):
+    suma = session('suma')
+    suma = suma + int(numero)
+    session(suma) = suma
+    return str(suma)
+
 @app.route('/users', methods = ['POST'])
 def create_user():
     c =  json.loads(request.form['values'])
