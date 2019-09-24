@@ -10,6 +10,11 @@ class User(connector.Manager.Base):
     fullname = Column(String(50))
     password = Column(String(12))
     username = Column(String(12))
+    
+class Group(connector.Manager.Base):
+    __tablename__ = "groups"
+    id = Column(Integer, Sequence('groups_id_seq'), primary_key=True)
+    name = Column(String(500))
 
 
 class Message(connector.Manager.Base):
